@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GovtInfo Portal — Jobs & Schemes</title>
+  <link rel="stylesheet" href="src/style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-icon">🇮🇳</span>
+        <div>
+          <div class="brand-title">GovtInfo Portal</div>
+          <div class="brand-sub">Government Jobs & Welfare Schemes</div>
+        </div>
+      </div>
+      <nav class="nav-tabs" role="tablist">
+        <button class="nav-tab active" data-tab="jobs" role="tab" aria-selected="true">
+          💼 Govt Jobs
+        </button>
+        <button class="nav-tab" data-tab="schemes" role="tab" aria-selected="false">
+          📋 Govt Schemes
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- JOBS SECTION -->
+    <section id="section-jobs" class="tab-section active">
+      <div class="section-hero">
+        <h1>Government Jobs</h1>
+        <p>Find the latest central and state government job openings across India</p>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="stats-bar">
+        <div class="stat-card"><span class="stat-num" id="jobs-total">0</span><span class="stat-label">Total Jobs</span></div>
+        <div class="stat-card"><span class="stat-num" id="jobs-open">0</span><span class="stat-label">Active Now</span></div>
+        <div class="stat-card"><span class="stat-num" id="jobs-sectors">0</span><span class="stat-label">Sectors</span></div>
+        <div class="stat-card"><span class="stat-num" id="jobs-vacancies">0</span><span class="stat-label">Vacancies</span></div>
+      </div>
+
+      <!-- Filters -->
+      <div class="filter-bar">
+        <input class="filter-input" id="jobs-search" type="search" placeholder="🔍  Search jobs by title, org or keyword…" />
+        <select class="filter-select" id="jobs-sector">
+          <option value="">All Sectors</option>
+        </select>
+        <select class="filter-select" id="jobs-state">
+          <option value="">All States</option>
+        </select>
+        <select class="filter-select" id="jobs-qualify">
+          <option value="">All Qualifications</option>
+        </select>
+        <button class="btn-clear" id="jobs-clear">Clear</button>
+      </div>
+
+      <!-- Jobs Grid -->
+      <div class="card-grid" id="jobs-grid"></div>
+      <div id="jobs-pagination"></div>
+      <div class="empty-state" id="jobs-empty" hidden>
+        <div class="empty-icon">📭</div>
+        <div>No jobs found matching your filters.</div>
+      </div>
+    </section>
+
+    <!-- SCHEMES SECTION -->
+    <section id="section-schemes" class="tab-section">
+      <div class="section-hero">
+        <h1>Government Schemes</h1>
+        <p>Explore welfare, subsidy and empowerment schemes run by Central & State Governments</p>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="stats-bar">
+        <div class="stat-card"><span class="stat-num" id="schemes-total">0</span><span class="stat-label">Total Schemes</span></div>
+        <div class="stat-card"><span class="stat-num" id="schemes-active">0</span><span class="stat-label">Active</span></div>
+        <div class="stat-card"><span class="stat-num" id="schemes-central">0</span><span class="stat-label">Central Govt</span></div>
+        <div class="stat-card"><span class="stat-num" id="schemes-state">0</span><span class="stat-label">State Govt</span></div>
+      </div>
+
+      <!-- Filters -->
+      <div class="filter-bar">
+        <input class="filter-input" id="schemes-search" type="search" placeholder="🔍  Search schemes by name, ministry or benefit…" />
+        <select class="filter-select" id="schemes-ministry">
+          <option value="">All Ministries</option>
+        </select>
+        <select class="filter-select" id="schemes-category">
+          <option value="">All Categories</option>
+        </select>
+        <select class="filter-select" id="schemes-beneficiary">
+          <option value="">All Beneficiaries</option>
+        </select>
+        <button class="btn-clear" id="schemes-clear">Clear</button>
+      </div>
+
+      <!-- Schemes Grid -->
+      <div class="card-grid" id="schemes-grid"></div>
+      <div id="schemes-pagination"></div>
+      <div class="empty-state" id="schemes-empty" hidden>
+        <div class="empty-icon">📭</div>
+        <div>No schemes found matching your filters.</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Data is indicative and for demonstration purposes only. Always verify from official government portals.</p>
+    <p>© 2024 GovtInfo Portal &nbsp;|&nbsp; <a href="https://www.india.gov.in" target="_blank">india.gov.in</a> &nbsp;|&nbsp; <a href="https://sarkariresult.com" target="_blank">sarkariresult.com</a></p>
+  </footer>
+
+  <!-- Job Detail Modal -->
+  <div class="modal-overlay" id="modal-overlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="src/data.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>
